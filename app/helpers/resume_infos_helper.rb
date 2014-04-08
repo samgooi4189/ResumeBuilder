@@ -1,0 +1,2 @@
+module ResumeInfosHelper
+end

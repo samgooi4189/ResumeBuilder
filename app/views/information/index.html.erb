@@ -1,0 +1,41 @@
+<h1>Listing information</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address 1</th>
+      <th>Address 2</th>
+      <th>City state zip</th>
+      <th>H phone</th>
+      <th>B phone</th>
+      <th>Email</th>
+      <th>Resume</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @information.each do |information| %>
+      <tr>
+        <td><%= information.name %></td>
+        <td><%= information.address_1 %></td>
+        <td><%= information.address_2 %></td>
+        <td><%= information.city_state_zip %></td>
+        <td><%= information.h_phone %></td>
+        <td><%= information.b_phone %></td>
+        <td><%= information.email %></td>
+        <td><%= information.resume_id %></td>
+        <td><%= link_to 'Show', information %></td>
+        <td><%= link_to 'Edit', edit_information_path(information) %></td>
+        <td><%= link_to 'Destroy', information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Information', new_information_path %>

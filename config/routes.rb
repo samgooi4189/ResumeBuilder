@@ -1,4 +1,26 @@
 ResumeApp::Application.routes.draw do
+  resources :schools
+
+  resources :positions
+
+  resources :companies
+
+  resources :people
+
+  resources :skills
+
+  resources :skillsets
+
+  resources :information
+
+  resources :recommendations
+
+  resources :experiences
+
+  resources :educations
+
+  resources :resume_infos
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
