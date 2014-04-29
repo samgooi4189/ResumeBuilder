@@ -1,4 +1,6 @@
 ResumeApp::Application.routes.draw do
+
+  root  'static_pages#home'
   resources :schools
 
   resources :positions

@@ -7,8 +7,44 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
-</body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <%= link_to "resume builder", root_path, id: "logo" %>
+          <nav>
+            <ul class="nav pull-right">
+              <li><%= link_to "Experience", '/experiences' %>
+              	<ul>
+              		<li><%= link_to "Company", '/companies' %>
+              			<ul>
+              				<li><%= link_to "Position", '/positions' %></li>
+              			</ul>
+              		</li>
+              	</ul>
+              </li>
+              <li><%= link_to "Education", '/educations' %>
+              	<ul>
+              		<li><%= link_to "School", '/schools' %></li>
+              	</ul>
+              </li>
+              <li><%= link_to "Recommendation", '/recommendations' %>
+              	<ul>
+              		<li><%= link_to "People", '/people' %></li>
+              	</ul>
+              </li>
+              <li><%= link_to "Information", '/information' %></li>
+              <li><%= link_to "Skillset", '/skillsets' %>
+              	<ul>
+              		<li><%= link_to "Skills", '/skills' %>
+          		</ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
 </html>
