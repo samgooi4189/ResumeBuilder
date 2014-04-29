@@ -1,0 +1,27 @@
+<h1>Listing resume_infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resume_infos.each do |resume_info| %>
+      <tr>
+        <td><%= resume_info.user_id %></td>
+        <td><%= link_to 'Show', resume_info %></td>
+        <td><%= link_to 'Edit', edit_resume_info_path(resume_info) %></td>
+        <td><%= link_to 'Destroy', resume_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Resume info', new_resume_info_path %>

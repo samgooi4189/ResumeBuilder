@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  degree: MyString
+  gpa: 1.5
+  major: MyString
+  grad_date: 2014-04-08
+  other: MyText
+  educ_id: 1
+
+two:
+  name: MyString
+  degree: MyString
+  gpa: 1.5
+  major: MyString
+  grad_date: 2014-04-08
+  other: MyText
+  educ_id: 1
