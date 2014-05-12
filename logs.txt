@@ -1,0 +1,102 @@
+2014-04-29T20:28:53.544760+00:00 app[web.1]:     23:         <td><%= company.name %></td>
+2014-04-29T20:28:53.544761+00:00 app[web.1]:     24:         <td><%= company.start_date %></td>
+2014-04-29T20:28:53.544763+00:00 app[web.1]:   app/views/companies/index.html.erb:21:in `_app_views_companies_index_html_erb___1454646871754569593_31790840'
+2014-04-29T20:28:53.544764+00:00 app[web.1]: 
+2014-04-29T20:28:53.544765+00:00 app[web.1]: 
+2014-04-29T20:28:53.655009+00:00 app[web.1]: Started GET "/companies" for 216.26.100.92 at 2014-04-29 20:28:53 +0000
+2014-04-29T20:28:53.654957+00:00 app[web.1]: Started GET "/companies" for 216.26.100.92 at 2014-04-29 20:28:53 +0000
+2014-04-29T20:28:53.657622+00:00 app[web.1]: Processing by CompaniesController#index as HTML
+2014-04-29T20:28:53.657629+00:00 app[web.1]: Processing by CompaniesController#index as HTML
+2014-04-29T20:28:53.665817+00:00 app[web.1]: PG::Error: ERROR:  relation "companies" does not exist
+2014-04-29T20:28:53.665824+00:00 app[web.1]: LINE 1: SELECT "companies".* FROM "companies"
+2014-04-29T20:28:53.665825+00:00 app[web.1]:                                   ^
+2014-04-29T20:28:53.665827+00:00 app[web.1]: : SELECT "companies".* FROM "companies"
+2014-04-29T20:28:53.666088+00:00 app[web.1]: PG::Error: ERROR:  relation "companies" does not exist
+2014-04-29T20:28:53.666091+00:00 app[web.1]: LINE 1: SELECT "companies".* FROM "companies"
+2014-04-29T20:28:53.666092+00:00 app[web.1]:                                   ^
+2014-04-29T20:28:53.666094+00:00 app[web.1]: : SELECT "companies".* FROM "companies"
+2014-04-29T20:28:53.667015+00:00 app[web.1]:   Rendered companies/index.html.erb within layouts/application (7.6ms)
+2014-04-29T20:28:53.667104+00:00 app[web.1]:   Rendered companies/index.html.erb within layouts/application (7.6ms)
+2014-04-29T20:28:53.667674+00:00 app[web.1]: Completed 500 Internal Server Error in 10ms
+2014-04-29T20:28:53.667723+00:00 app[web.1]: Completed 500 Internal Server Error in 10ms
+2014-04-29T20:28:53.669827+00:00 app[web.1]: 
+2014-04-29T20:28:53.669857+00:00 app[web.1]: ActionView::Template::Error (PG::Error: ERROR:  relation "companies" does not exist
+2014-04-29T20:28:53.669859+00:00 app[web.1]: LINE 1: SELECT "companies".* FROM "companies"
+2014-04-29T20:28:53.669861+00:00 app[web.1]:                                   ^
+2014-04-29T20:28:53.669862+00:00 app[web.1]: : SELECT "companies".* FROM "companies"):
+2014-04-29T20:28:53.669864+00:00 app[web.1]:     18:   </thead>
+2014-04-29T20:28:53.669865+00:00 app[web.1]:     19: 
+2014-04-29T20:28:53.669867+00:00 app[web.1]:     20:   <tbody>
+2014-04-29T20:28:53.669869+00:00 app[web.1]:     21:     <% @companies.each do |company| %>
+2014-04-29T20:28:53.669870+00:00 app[web.1]:     22:       <tr>
+2014-04-29T20:28:53.669872+00:00 app[web.1]:     23:         <td><%= company.name %></td>
+2014-04-29T20:28:53.669873+00:00 app[web.1]:     24:         <td><%= company.start_date %></td>
+2014-04-29T20:28:53.669875+00:00 app[web.1]:   app/views/companies/index.html.erb:21:in `_app_views_companies_index_html_erb___1454646871754569593_31899820'
+2014-04-29T20:28:53.669876+00:00 app[web.1]: 
+2014-04-29T20:28:53.669878+00:00 app[web.1]: 
+2014-04-29T20:28:53.669924+00:00 app[web.1]: 
+2014-04-29T20:28:53.669926+00:00 app[web.1]: ActionView::Template::Error (PG::Error: ERROR:  relation "companies" does not exist
+2014-04-29T20:28:53.669929+00:00 app[web.1]:                                   ^
+2014-04-29T20:28:53.669931+00:00 app[web.1]: : SELECT "companies".* FROM "companies"):
+2014-04-29T20:28:53.669932+00:00 app[web.1]:     18:   </thead>
+2014-04-29T20:28:53.669934+00:00 app[web.1]:     19: 
+2014-04-29T20:28:53.669935+00:00 app[web.1]:     20:   <tbody>
+2014-04-29T20:28:53.669937+00:00 app[web.1]:     21:     <% @companies.each do |company| %>
+2014-04-29T20:28:53.669928+00:00 app[web.1]: LINE 1: SELECT "companies".* FROM "companies"
+2014-04-29T20:28:53.669945+00:00 app[web.1]: 
+2014-04-29T20:28:53.669944+00:00 app[web.1]: 
+2014-04-29T20:28:53.669941+00:00 app[web.1]:     24:         <td><%= company.start_date %></td>
+2014-04-29T20:28:53.669938+00:00 app[web.1]:     22:       <tr>
+2014-04-29T20:28:53.669939+00:00 app[web.1]:     23:         <td><%= company.name %></td>
+2014-04-29T20:28:53.669943+00:00 app[web.1]:   app/views/companies/index.html.erb:21:in `_app_views_companies_index_html_erb___1454646871754569593_31899820'
+2014-04-29T20:28:55.204130+00:00 heroku[router]: at=info method=GET path=/companies host=peaceful-sands-2181.herokuapp.com request_id=9c679242-d698-41f1-9a7f-46050b6a1929 fwd="216.26.100.92" dyno=web.1 connect=27ms service=91ms status=500 bytes=1543
+2014-04-29T20:28:47.738052+00:00 heroku[router]: at=info method=GET path=/favicon.ico host=peaceful-sands-2181.herokuapp.com request_id=7b0c0415-6699-49d6-a71e-55dcb251c317 fwd="216.26.100.92" dyno=web.1 connect=1ms service=5ms status=304 bytes=133
+2014-04-29T20:28:55.177994+00:00 app[web.1]: Started GET "/companies" for 216.26.100.92 at 2014-04-29 20:28:55 +0000
+2014-04-29T20:28:55.178007+00:00 app[web.1]: Started GET "/companies" for 216.26.100.92 at 2014-04-29 20:28:55 +0000
+2014-04-29T20:28:55.180558+00:00 app[web.1]: Processing by CompaniesController#index as HTML
+2014-04-29T20:28:55.195666+00:00 app[web.1]: LINE 1: SELECT "companies".* FROM "companies"
+2014-04-29T20:28:55.180565+00:00 app[web.1]: Processing by CompaniesController#index as HTML
+2014-04-29T20:28:55.195659+00:00 app[web.1]: PG::Error: ERROR:  relation "companies" does not exist
+2014-04-29T20:28:55.195668+00:00 app[web.1]:                                   ^
+2014-04-29T20:28:55.195670+00:00 app[web.1]: : SELECT "companies".* FROM "companies"
+2014-04-29T20:28:55.195676+00:00 app[web.1]: PG::Error: ERROR:  relation "companies" does not exist
+2014-04-29T20:28:55.195678+00:00 app[web.1]: LINE 1: SELECT "companies".* FROM "companies"
+2014-04-29T20:28:55.195680+00:00 app[web.1]:                                   ^
+2014-04-29T20:28:55.195681+00:00 app[web.1]: : SELECT "companies".* FROM "companies"
+2014-04-29T20:28:55.196471+00:00 app[web.1]:   Rendered c
+ompanies/index.html.erb within layouts/application (14.8ms)
+2014-04-29T20:28:55.196477+00:00 app[web.1]:   Rendered companies/index.html.erb within layouts/application (14.8ms)
+2014-04-29T20:28:55.196600+00:00 app[web.1]: Completed 500 Internal Server Error in 16ms
+2014-04-29T20:28:55.196605+00:00 app[web.1]: Completed 500 Internal Server Error in 16ms
+2014-04-29T20:28:55.198272+00:00 app[web.1]: 
+2014-04-29T20:28:55.198276+00:00 app[web.1]: ActionView::Template::Error (PG::Error: ERROR:  relation "companies" does not exist
+2014-04-29T20:28:55.198278+00:00 app[web.1]: LINE 1: SELECT "companies".* FROM "companies"
+2014-04-29T20:28:55.198279+00:00 app[web.1]:                                   ^
+2014-04-29T20:28:55.198292+00:00 app[web.1]:     24:         <td><%= company.start_date %></td>
+2014-04-29T20:28:55.198286+00:00 app[web.1]:     20:   <tbody>
+2014-04-29T20:28:55.198290+00:00 app[web.1]:     23:         <td><%= company.name %></td>
+2014-04-29T20:28:55.198289+00:00 app[web.1]:     22:       <tr>
+2014-04-29T20:28:55.198281+00:00 app[web.1]: : SELECT "companies".* FROM "companies"):
+2014-04-29T20:28:55.198283+00:00 app[web.1]:     18:   </thead>
+2014-04-29T20:28:55.198284+00:00 app[web.1]:     19: 
+2014-04-29T20:28:55.198287+00:00 app[web.1]:     21:     <% @companies.each do |company| %>
+2014-04-29T20:28:55.198293+00:00 app[web.1]:   app/views/companies/index.html.erb:21:in `_app_views_companies_index_html_erb___1454646871754569593_31899820'
+2014-04-29T20:28:55.198295+00:00 app[web.1]: 
+2014-04-29T20:28:55.198296+00:00 app[web.1]: 
+2014-04-29T20:28:55.202387+00:00 app[web.1]:     22:       <tr>
+2014-04-29T20:28:55.202354+00:00 app[web.1]: 
+2014-04-29T20:28:55.202358+00:00 app[web.1]: ActionView::Template::Error (PG::Error: ERROR:  relation "companies" does not exist
+2014-04-29T20:28:55.202377+00:00 app[web.1]: LINE 1: SELECT "companies".* FROM "companies"
+2014-04-29T20:28:55.202379+00:00 app[web.1]:                                   ^
+2014-04-29T20:28:55.202380+00:00 app[web.1]: : SELECT "companies".* FROM "companies"):
+2014-04-29T20:28:55.202382+00:00 app[web.1]:     18:   </thead>
+2014-04-29T20:28:55.202383+00:00 app[web.1]:     19: 
+2014-04-29T20:28:55.202385+00:00 app[web.1]:     20:   <tbody>
+2014-04-29T20:28:55.202386+00:00 app[web.1]:     21:     <% @companies.each do |company| %>
+2014-04-29T20:28:55.202389+00:00 app[web.1]:     23:         <td><%= company.name %></td>
+2014-04-29T20:28:55.202390+00:00 app[web.1]:     24:         <td><%= company.start_date %></td>
+2014-04-29T20:28:55.202392+00:00 app[web.1]:   app/views/companies/index.html.erb:21:in `_app_views_companies_index_html_erb___1454646871754569593_31899820'
+2014-04-29T20:28:55.202395+00:00 app[web.1]: 
+2014-04-29T20:28:55.202393+00:00 app[web.1]: 
+2014-04-29T20:28:36.561526+00:00 heroku[router]: at=info method=GET path=/favicon.ico host=peaceful-sands-2181.herokuapp.com request_id=71162e8a-78eb-4c85-8de9-5e393c67419e fwd="216.26.100.92" dyno=web.1 connect=17ms service=44ms status=304 bytes=133
+2014-04-29T20:28:53.692936+00:00 heroku[router]: at=info method=GET path=/companies host=peaceful-sands-2181.herokuapp.com request_id=728e657b-eef6-40ac-81bc-d42de4eca1f7 fwd="216.26.100.92" dyno=web.1 connect=15ms service=45ms status=500 bytes=1543
