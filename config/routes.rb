@@ -13,17 +13,17 @@ ResumeApp::Application.routes.draw do
 
   resources :skills
 
-  resources :skillsets
+  resources :skillsets, only: [:create, :destroy]
 
   resources :information
 
-  resources :recommendations
+  resources :recommendations, only: [:create, :destroy]
 
-  resources :experiences
+  resources :experiences, only: [:create, :destroy]
 
-  resources :educations
+  resources :educations, only: [:create, :destroy]
 
-  resources :resume_infos
+  resources :resume_infos, only: [:create, :destroy]
 
   resource :sessions, only: [:new, :create, :destroy]
   match '/signup',    to: 'users#new',              via: 'get'
