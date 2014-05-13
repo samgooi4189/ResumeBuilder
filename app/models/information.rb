@@ -1,5 +1,6 @@
 class Information < ActiveRecord::Base
 	belongs_to :resume_info
+	belongs_to :user
 	validates :name, presence: true
 	validates :address_1, presence: true
 	validates :address_2, presence: true
