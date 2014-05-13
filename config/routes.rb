@@ -13,17 +13,17 @@ ResumeApp::Application.routes.draw do
 
   resources :skills
 
-  resources :skillsets
+  resources :skillsets, only: [:create, :destroy]
 
   resources :information
 
-  resources :recommendations
+  resources :recommendations, only: [:create, :destroy]
 
-  resources :experiences
+  resources :experiences, only: [:create, :destroy]
 
-  resources :educations
+  resources :educations, only: [:create, :destroy]
 
-  resources :resume_infos
+  resources :resume_infos, only: [:create, :destroy]
 
   resource :sessions, only: [:new, :create, :destroy]
   match '/signup',    to: 'users#new',              via: 'get'
@@ -31,6 +31,12 @@ ResumeApp::Application.routes.draw do
   match '/signout',   to: 'sessions#destroy',       via: 'delete'
   match '/help',      to: 'static_pages#help',      via: 'get'
   match '/generate',  to: 'static_pages#generate',  via: 'get'
+
+
+  match '/experience', to: 'experiences#index',     via: 'get'
+  match '/resume', to: 'resume_infos#index', via: 'get'
+  match '/education',  to: 'educations#index', via: 'get'
+  match '/skillset',  to: 'skillsets#index', via: 'get'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

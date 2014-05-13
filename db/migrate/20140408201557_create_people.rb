@@ -9,5 +9,6 @@ class CreatePeople < ActiveRecord::Migration
       t.timestamps
     end
     add_reference :people, :recommendation, index: true
+    add_reference :people, :user, index: true
   end
 end

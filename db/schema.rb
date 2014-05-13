@@ -20,9 +20,11 @@ ActiveRecord::Schema.define(version: 20140429052746) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "experience_id"
+    t.integer  "user_id"
   end
 
   add_index "companies", ["experience_id"], name: "index_companies_on_experience_id"
+  add_index "companies", ["user_id"], name: "index_companies_on_user_id"
 
   create_table "educations", force: true do |t|
     t.datetime "created_at"
@@ -65,17 +67,23 @@ ActiveRecord::Schema.define(version: 20140429052746) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "recommendation_id"
+    t.integer  "user_id"
   end
 
   add_index "people", ["recommendation_id"], name: "index_people_on_recommendation_id"
+  add_index "people", ["user_id"], name: "index_people_on_user_id"
 
   create_table "positions", force: true do |t|
     t.string   "name"
     t.text     "tasks"
-    t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "company_id"
+    t.integer  "user_id"
   end
+
+  add_index "positions", ["company_id"], name: "index_positions_on_company_id"
+  add_index "positions", ["user_id"], name: "index_positions_on_user_id"
 
   create_table "recommendations", force: true do |t|
     t.datetime "created_at"
@@ -103,9 +111,11 @@ ActiveRecord::Schema.define(version: 20140429052746) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "education_id"
+    t.integer  "user_id"
   end
 
   add_index "schools", ["education_id"], name: "index_schools_on_education_id"
+  add_index "schools", ["user_id"], name: "index_schools_on_user_id"
 
   create_table "skills", force: true do |t|
     t.string   "name"
@@ -113,9 +123,11 @@ ActiveRecord::Schema.define(version: 20140429052746) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "skillset_id"
+    t.integer  "user_id"
   end
 
   add_index "skills", ["skillset_id"], name: "index_skills_on_skillset_id"
+  add_index "skills", ["user_id"], name: "index_skills_on_user_id"
 
   create_table "skillsets", force: true do |t|
     t.datetime "created_at"

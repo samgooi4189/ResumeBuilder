@@ -7,11 +7,11 @@ class User < ActiveRecord::Base
                 uniqueness: { case_sensitive: false}
   has_secure_password
   validates :password, length: { minimum: 6 }
-  has_many :resume_infos
+  has_one :resume_info
   has_many :companies
   has_many :positions
   has_many :schools
-  has_many :information
+  has_one :information
   has_many :skills
 
 

@@ -11,5 +11,6 @@ class CreateSchools < ActiveRecord::Migration
       t.timestamps
     end
     add_reference :schools, :education, index: true
+    add_reference :schools, :user, index: true
   end
 end

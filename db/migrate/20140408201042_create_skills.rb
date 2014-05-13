@@ -7,5 +7,6 @@ class CreateSkills < ActiveRecord::Migration
       t.timestamps
     end
     add_reference :skills, :skillset, index: true
+    add_reference :skills, :user, index: true
   end
 end
