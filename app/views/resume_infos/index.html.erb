@@ -2,8 +2,8 @@
 
 <br/>
   <h3>Experience</h3>
-    <% if @resume.experiences.any? %>
-      <% @exprience = @resume.experiences[-1] %>
+    <% if @resume.experience.present? %>
+      <% @experience = @resume.experience %>
       <% render 'shared/experience_section'%>
     <% end %>
   <h3>Education</h3>

@@ -34,7 +34,7 @@ ResumeApp::Application.routes.draw do
 
 
   match '/experience', to: 'experiences#index',     via: 'get'
-  match '/resume', to: 'resume_info#index', via: 'get'
+  match '/resume', to: 'resume_infos#index', via: 'get'
   match '/education',  to: 'educations#index', via: 'get'
   match '/skillset',  to: 'skillsets#index', via: 'get'
 
