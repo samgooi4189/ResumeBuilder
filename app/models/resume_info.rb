@@ -1,4 +1,5 @@
 class ResumeInfo < ActiveRecord::Base
+	belongs_to :user
 	has_one :education
 	has_one :experience
 	has_one :recommendation
