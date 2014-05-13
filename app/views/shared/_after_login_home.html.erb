@@ -1,10 +1,10 @@
 <h1>Welcome</h1>
 
-<div class="btn-group">
+<div class="btn-group btn-group-justified">
   <%= link_to "Add Company", new_company_path, :class => "btn btn-default", :method => :get  %>
   <%= link_to "Add School", new_school_path, :class => "btn btn-default", :method => :get  %>
   <%= link_to "Add People", new_person_path, :class => "btn btn-default", :method => :get  %>
-  <%= link_to "Add Information", new_information_path, :class => "btn btn-default", :method => :get  %>
+  <%= link_to "Edit Information", edit_information_path(current_user.information.id), :class => "btn btn-default", :method => :get  %>
   <%= link_to "Add Skill", new_skill_path, :class => "btn btn-default", :method => :get  %>
 </div>
 
