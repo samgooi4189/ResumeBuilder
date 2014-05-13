@@ -5,9 +5,9 @@ class CreatePeople < ActiveRecord::Migration
       t.string :relationship
       t.string :phone
       t.string :email
-      t.integer :recommend_id
 
       t.timestamps
     end
+    add_reference :people, :recommendation, index: true
   end
 end

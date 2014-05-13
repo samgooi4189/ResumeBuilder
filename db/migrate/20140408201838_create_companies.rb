@@ -4,9 +4,9 @@ class CreateCompanies < ActiveRecord::Migration
       t.string :name
       t.date :start_date
       t.date :end_date
-      t.integer :exp_id
 
       t.timestamps
     end
+    add_reference :companies, :experience, index: true
   end
 end

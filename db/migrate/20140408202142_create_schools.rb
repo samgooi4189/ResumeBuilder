@@ -7,9 +7,9 @@ class CreateSchools < ActiveRecord::Migration
       t.string :major
       t.date :grad_date
       t.text :other
-      t.integer :educ_id
 
       t.timestamps
     end
+    add_reference :schools, :education, index: true
   end
 end

@@ -1,5 +1,5 @@
 class Person < ActiveRecord::Base
-	belongs_to :recommendation
+	belongs_to :recommendation, dependent: :destroy
 	belongs_to :user
 	validates :name, presence: true
 	validates :relationship, presence: true
