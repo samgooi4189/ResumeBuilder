@@ -1,27 +1,13 @@
-<h1>Listing resume_infos</h1>
+<h1>Resume<h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @resume_infos.each do |resume_info| %>
-      <tr>
-        <td><%= resume_info.user_id %></td>
-        <td><%= link_to 'Show', resume_info %></td>
-        <td><%= link_to 'Edit', edit_resume_info_path(resume_info) %></td>
-        <td><%= link_to 'Destroy', resume_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<br/>
+  <h3>Experience</h3>
+    <% if @resume.experience.present? %>
+      <% @experience = @resume.experience %>
+      <% render 'shared/experience_section'%>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Resume info', new_resume_info_path %>
+  <h3>Education</h3>
+  <h3>Recommendation</h3>
+  <h3>Information</h3>
+  <h3>Skillsets</h3>
+<br/>

@@ -12,11 +12,6 @@ class InformationController < ApplicationController
   def show
   end
 
-  # GET /information/new
-  def new
-    @information = Information.new
-  end
-
   # GET /information/1/edit
   def edit
   end
@@ -24,7 +19,7 @@ class InformationController < ApplicationController
   # POST /information
   # POST /information.json
   def create
-    @information = Information.new(information_params)
+    @information = Information.new
 
     respond_to do |format|
       if @information.save
