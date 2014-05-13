@@ -24,8 +24,7 @@ class PositionsController < ApplicationController
   # POST /positions
   # POST /positions.json
   def create
-    @position = Position.new(position_params)
-    #Company.find(position_params.companyid).positions.create(position_params)
+    @position = Company.find(position_params.company_id).positions.build(position_params)
 
     respond_to do |format|
       if @position.save

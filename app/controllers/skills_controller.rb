@@ -24,7 +24,7 @@ class SkillsController < ApplicationController
   # POST /skills
   # POST /skills.json
   def create
-    @skill = Skill.new(skill_params)
+   @skill = current_user.skills.build(skill_params) 
 
     respond_to do |format|
       if @skill.save
