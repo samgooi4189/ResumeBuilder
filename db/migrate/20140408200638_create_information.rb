@@ -8,9 +8,10 @@ class CreateInformation < ActiveRecord::Migration
       t.string :h_phone
       t.string :b_phone
       t.string :email
-      t.integer :resume_id
 
       t.timestamps
     end
+    add_reference :information, :resume_info, index: true
+    add_reference :information, :user, index: true
   end
 end
