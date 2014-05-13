@@ -1,5 +1,5 @@
 class Company < ActiveRecord::Base
-	belongs_to :experience
+	belongs_to :experience, dependent: :destroyed
 	belongs_to :user
 	has_many :positions
 	validates :name, presence: true
