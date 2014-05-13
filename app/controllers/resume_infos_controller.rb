@@ -4,11 +4,11 @@ class ResumeInfosController < ApplicationController
   # GET /resume_infos
   # GET /resume_infos.json
   def index
-    @resume_infos = ResumeInfo.all
+    @resume = current_user.resume_info
   end
 
   def create
-    @resume_info = ResumeInfo.new({:user_id => current_user.id})
+    @resume_info = ResumeInfo.new
     respond_to do |format|
       if @resume_info.save
         format.html { redirect_to @resume_info, notice: 'Resume info was successfully created.' }

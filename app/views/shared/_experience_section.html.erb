@@ -1,0 +1,6 @@
+<% @companies = @experience.companies %>
+<% if @companies.any? %>
+  <ol>
+    <%= render partial: 'shared/company_details', collection: @companies%>
+  </ol>
+<% end %>

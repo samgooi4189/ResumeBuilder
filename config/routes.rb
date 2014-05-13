@@ -33,6 +33,12 @@ ResumeApp::Application.routes.draw do
   match '/generate',  to: 'static_pages#generate',  via: 'get'
 
 
+  match '/experience', to: 'experiences#index',     via: 'get'
+  match '/resume', to: 'resume_info#index', via: 'get'
+  match '/education',  to: 'educations#index', via: 'get'
+  match '/skillset',  to: 'skillsets#index', via: 'get'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
