@@ -8,5 +8,6 @@ class CreateCompanies < ActiveRecord::Migration
       t.timestamps
     end
     add_reference :companies, :experience, index: true
+    add_reference :companies, :user, index: true
   end
 end
