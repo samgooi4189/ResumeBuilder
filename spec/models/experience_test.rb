@@ -1,13 +1,15 @@
-require 'test_helper'
+require 'spec_helper'
 
-class ExperienceTest < ActiveSupport::TestCase
-  #it {should belong_to :resume_info}
-  
-  #it {should have_many :companies}
-
-  #it {should respond_to :resume_id}
-
+#class CompanyTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+describe Experience do
+  before do
+  	  @experience = Experience.new(resume_info_id: 1)
+  end
+
+  subject{ @experience }
+
+  it {should respond_to(:resume_info_id)}
 end

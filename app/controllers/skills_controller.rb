@@ -26,6 +26,7 @@ class SkillsController < ApplicationController
   def create
     @skill = current_user.resume_info.skillset.skills.build(skill_params)
     current_user.skills << @skill
+
     respond_to do |format|
       if @skill.save
         format.html { redirect_to @skill, notice: 'Skill was successfully created.' }
