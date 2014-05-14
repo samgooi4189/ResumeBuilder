@@ -66,6 +66,9 @@ class SkillsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_skill
       @skill = current_user.skills.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        flash[:notice] = "Record not found"
+        redirect_to :action => 'index'
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
