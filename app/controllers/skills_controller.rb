@@ -4,7 +4,7 @@ class SkillsController < ApplicationController
   # GET /skills
   # GET /skills.json
   def index
-    @skills = Skill.all
+    @skills = current_user.skills
   end
 
   # GET /skills/1
@@ -24,8 +24,8 @@ class SkillsController < ApplicationController
   # POST /skills
   # POST /skills.json
   def create
-   @skill = current_user.skills.build(skill_params) 
-
+    @skill = current_user.resume_info.skillset.skills.build(skill_params)
+    current_user.skills << @skill
     respond_to do |format|
       if @skill.save
         format.html { redirect_to @skill, notice: 'Skill was successfully created.' }
@@ -64,11 +64,11 @@ class SkillsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_skill
-      @skill = Skill.find(params[:id])
+      @skill = current_user.skills.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def skill_params
-      params.require(:skill).permit(:name, :description, :sset_id)
+      params.require(:skill).permit(:name, :description)
     end
 end

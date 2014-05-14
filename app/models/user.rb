@@ -10,10 +10,11 @@ class User < ActiveRecord::Base
   has_one :resume_info
   has_many :companies
   has_many :positions
+  has_many :people
   has_many :schools
   has_one :information
   has_many :skills
-
+  has_many :people
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64

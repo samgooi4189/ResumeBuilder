@@ -1,15 +1,17 @@
 class InformationController < ApplicationController
-  before_action :set_information, only: [:show, :edit, :update, :destroy]
+  before_action :set_information, only: [:edit, :update, :destroy]
 
   # GET /information
   # GET /information.json
   def index
-    @information = Information.all
+    @information = current_user.information
+    redirect_to @information
   end
 
   # GET /information/1
   # GET /information/1.json
   def show
+    @information = current_user.information
   end
 
   # GET /information/1/edit
@@ -19,7 +21,8 @@ class InformationController < ApplicationController
   # POST /information
   # POST /information.json
   def create
-    @information = Information.new
+    @information = current_user.resume_info.information.build(information_params)
+    current_user.information << @information 
 
     respond_to do |format|
       if @information.save
@@ -64,6 +67,6 @@ class InformationController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def information_params
-      params.require(:information).permit(:name, :address_1, :address_2, :city_state_zip, :h_phone, :b_phone, :email, :resume_id)
+      params.require(:information).permit(:name, :address_1, :address_2, :city_state_zip, :h_phone, :b_phone, :email)
     end
 end

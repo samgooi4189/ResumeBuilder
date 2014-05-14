@@ -1,16 +1,18 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @user = current_user
+    redirect_to @user
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = current_user
   end
 
   # GET /users/new
@@ -29,6 +31,7 @@ class UsersController < ApplicationController
     initResume(@user)
     respond_to do |format|
       if @user.save
+        sign_in(@user)
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
       else
