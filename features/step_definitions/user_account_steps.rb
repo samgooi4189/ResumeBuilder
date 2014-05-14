@@ -8,11 +8,11 @@ module RegisterHelpers
 end
 World(RegisterHelpers)
 
-Given(/^I am on the signup page$/) do
+Given /^I am on the signup page$/ do
   visit signup_path
 end
 
-Given(/^I am on the login page$/) do
+Given /^I am on the login page$/ do
   visit signin_path
 end
 
@@ -41,14 +41,14 @@ When /^(?:|I )fill in "([^"]*)" for "([^"]*)"(?: within "([^"]*)")?$/ do |value,
   end
 end
 
-When(/^I press "(.*?)"$/) do |button|
+When /^I press "(.*?)"$/ do |button|
   click_button(button)
 end
 
-Then(/^page should redirect test profile page$/) do
+Then /^page should redirect test profile page$/ do
   page.should have_title("| test")
 end
 
-Given(/^I should see "(.*?)"$/) do |warning|
+Given /^I should see "(.*?)"$/  do |warning|
   page.should have_selector('div.alert.alert-error', "Password confirmation doesn't match Password")
 end

@@ -1,8 +1,9 @@
 Given /^I am a loggedin user$/ do
-  step "I am on the login page"
-  step "I have a user with username \"dummy\" and password \"password\""
-  step "I fill in \"dummy\" for \"Username or Email Address\""
-  step "I fill in \"password\" for \"Password\""
-  step "I press \"Log in\""
-  step "page should redirect test profile page"
+  step "I have a user with name \"dummy\" and password \"password\""
+  visit signin_path
+  fill_in("Email", :with => "dummy@example.com")
+  fill_in("Password", :with => "password")
+  click_button("Sign in")
+  page.should have_title("| dummy")
+  visit root_path
 end
