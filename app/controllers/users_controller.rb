@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-      @user = current_user
+    @user = current_user
   end
 
   # GET /users/new
@@ -31,6 +31,7 @@ class UsersController < ApplicationController
     initResume(@user)
     respond_to do |format|
       if @user.save
+        sign_in(@user)
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
       else
