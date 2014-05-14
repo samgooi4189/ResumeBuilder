@@ -9,4 +9,11 @@ FactoryGirl.define do
       admin true
     end
   end
+
+  factory :resume_info do
+  end
+  factory :experience_info do
+  end
+  factory :information do
+  end
 end

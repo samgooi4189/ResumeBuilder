@@ -21,7 +21,7 @@ class InformationController < ApplicationController
   # POST /information
   # POST /information.json
   def create
-    @information = current_user.resume_info.information.build(information_params)
+    @information = current_user.resume_info.information.build(resume_params)
     current_user.information << @information 
 
     respond_to do |format|
