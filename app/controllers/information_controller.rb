@@ -63,6 +63,9 @@ class InformationController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_information
       @information = Information.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        flash[:notice] = "Record not found"
+        redirect_to :action => 'show'
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

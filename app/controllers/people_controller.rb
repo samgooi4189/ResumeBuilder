@@ -4,7 +4,7 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    @people = Person.all
+    @people = current_user.people
   end
 
   # GET /people/1
@@ -24,7 +24,8 @@ class PeopleController < ApplicationController
   # POST /people
   # POST /people.json
   def create
-    @person = current_user.people.build(person_params)
+    @person = current_user.resume_info.recommendation.people.build(person_params)
+    current_user.people << @person
 
     respond_to do |format|
       if @person.save
@@ -64,7 +65,10 @@ class PeopleController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_person
-      @person = Person.find(params[:id])
+      @person = current_user.people.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        flash[:notice] = "Record not found"
+        redirect_to :action => 'index'
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

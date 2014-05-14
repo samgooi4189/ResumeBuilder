@@ -4,7 +4,7 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.all
+    @companies = current_user.companies
   end
 
   # GET /companies/1
@@ -24,7 +24,8 @@ class CompaniesController < ApplicationController
   # POST /companies
   # POST /companies.json
   def create
-    @company = current_user.companies.build(company_params)
+    @company = current_user.resume_info.experience.companies.build(company_params)
+    current_user.companies << @company
 
     respond_to do |format|
       if @company.save
@@ -64,7 +65,10 @@ class CompaniesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_company
-      @company = Company.find(params[:id])
+      @company = current_user.companies.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        flash[:notice] = "Record not found"
+        redirect_to :action => 'index'
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
