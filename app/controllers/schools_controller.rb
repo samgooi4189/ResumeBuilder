@@ -4,7 +4,7 @@ class SchoolsController < ApplicationController
   # GET /schools
   # GET /schools.json
   def index
-    @schools = School.all
+    @schools = current_user.schools
   end
 
   # GET /schools/1
@@ -24,7 +24,8 @@ class SchoolsController < ApplicationController
   # POST /schools
   # POST /schools.json
   def create
-    @school = current_user.schools.build(school_params)
+    @school = current_user.resume_info.education.schools.build(school_params)
+    current_user.schools << @school
 
     respond_to do |format|
       if @school.save
@@ -64,11 +65,14 @@ class SchoolsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_school
-      @school = School.find(params[:id])
+      @school = current_user.schools.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        flash[:notice] = "Record not found"
+        redirect_to :action => 'index'
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def school_params
-      params.require(:school).permit(:name, :degree, :gpa, :major, :grad_date, :other, :educ_id)
+      params.require(:school).permit(:name, :degree, :gpa, :major, :grad_date, :other)
     end
 end

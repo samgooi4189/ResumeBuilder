@@ -4,7 +4,7 @@ class PositionsController < ApplicationController
   # GET /positions
   # GET /positions.json
   def index
-    @positions = Position.all
+    @positions = current_user.positions
   end
 
   # GET /positions/1
@@ -24,7 +24,8 @@ class PositionsController < ApplicationController
   # POST /positions
   # POST /positions.json
   def create
-    @position = current_user.positions.build(position_params)
+    @position = current_user.resume_info.experience.companies.find(position_params[:company_id]).positions.build(position_params)
+    current_user.positions << @position
 
     respond_to do |format|
       if @position.save
@@ -64,7 +65,10 @@ class PositionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_position
-      @position = Position.find(params[:id])
+      @position = current_user.positions.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        flash[:notice] = "Record not found"
+        redirect_to :action => 'index'
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
