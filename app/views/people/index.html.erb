@@ -11,7 +11,6 @@
       <th>Relationship</th>
       <th>Phone</th>
       <th>Email</th>
-      <th>Recommend</th>
       <th></th>
       <th></th>
       <th></th>
@@ -25,7 +24,6 @@
         <td><%= person.relationship %></td>
         <td><%= person.phone %></td>
         <td><%= person.email %></td>
-        <td><%= person.recommend_id %></td>
         <td><%= link_to 'Show', person %></td>
         <td><%= link_to 'Edit', edit_person_path(person) %></td>
         <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
