@@ -20,6 +20,7 @@ Given /^I have a user with name "([^"]*)" and password "([^"]*)"$/ do |name, pas
   User.create!(:name => name, :password => password, :password_confirmation => password, :email => "#{name}@example.com")
 end
 
+
 #Given(/^I fill in "(.*?)" with "(.*?)"$/) do |field, data|
 #  fill_in(field.gsub(' ', '_'), :with => data)
 #end
