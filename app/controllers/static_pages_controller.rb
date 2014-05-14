@@ -4,9 +4,6 @@ class StaticPagesController < ApplicationController
   def home
   end
 
-  def help
-  end
-
   def generate
   	pdf = Prawn::Document.new
 	pdf.text "#{current_user.information.try(:name)}", :align => :center

@@ -32,3 +32,16 @@ def sign_in(user, options={})
     click_button "Sign in"
   end
 end
+
+#def initResume( user )
+    #resume_info = ResumeInfo.create!({})
+    #resume_info.experience = Experience.create!({})
+    #resume_info.education = Education.create!({})
+  #  let(:information) { FactoryGirl.create(:information) }
+  #  user.information << information
+    #resume_info.recommendation = Recommendation.create!({})
+    #resume_info.skillset = Skillset.create!({})
+    #user.resume_info = resume_info
+    #user.information = resume_info.information
+#end
+
