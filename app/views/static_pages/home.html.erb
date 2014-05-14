@@ -2,8 +2,14 @@
 <% if signed_in? %>
   <%= render 'shared/after_login_home' %>
 <% else %>
-  <h1>Resume Builder</h1>
+  <div class="center hero-unit">
+    <h1>Resume Builder</h1>
 
-  <%= link_to "Sign up now!", signup_path,
+    <h2>
+      Welcome to Resume Builder, where you could build your resume in a few clicks.
+    </h2>
+
+    <%= link_to "Sign up now!", signup_path,
                                 class: "btn btn-large btn-primary" %>
+  </div>
 <% end %>

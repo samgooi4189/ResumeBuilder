@@ -26,8 +26,8 @@ describe "Static pages" do
       it "should have the right links on the layout" do
         click_link "Company"
         expect(page).to have_title('Company')
-        click_link "Information"
-        expect(page).to have_title('Information')
+        #click_link "Information"
+        #expect(page).to have_title('Information')
         click_link "People"
         expect(page).to have_title('People')
         click_link "Position"
@@ -40,20 +40,9 @@ describe "Static pages" do
     end
   end
 
-  describe "Help page" do
-    before { visit help_path }
-
-    let(:heading)    { 'Help' }
-    let(:page_title) { 'Help' }
-
-    it_should_behave_like "all static pages"
-  end
-
   describe "Links on layout" do
     it "should have the right links on the layout" do
     visit root_path
-    click_link "Help"
-    expect(page).to have_title(full_title('Help'))
     click_link "Home"
     click_link "Sign up now!"
     expect(page).to have_title(full_title('Sign up'))
